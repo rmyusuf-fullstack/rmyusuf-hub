@@ -444,6 +444,25 @@ restoreBriefState();
 if (briefForm) {
   briefForm.addEventListener("input", saveBriefState);
   briefForm.addEventListener("change", saveBriefState);
+
+  briefForm.querySelectorAll('.chip input[type="radio"]').forEach((input) => {
+    const label = input.closest(".chip");
+
+    if (!label) return;
+
+    label.addEventListener("pointerdown", () => {
+      label.dataset.wasChecked = String(input.checked);
+    });
+
+    label.addEventListener("click", (event) => {
+      if (label.dataset.wasChecked !== "true") return;
+
+      event.preventDefault();
+      input.checked = false;
+      input.dispatchEvent(new Event("change", { bubbles: true }));
+      delete label.dataset.wasChecked;
+    });
+  });
 }
  
 function currentLanguage() {
@@ -570,25 +589,15 @@ if (briefForm) {
     if (action === "email") {
       const name = briefForm.elements.clientName.value.trim();
       const subject = copy.subject(name);
-      const isDesktop = window.matchMedia(
-        "(hover: hover) and (pointer: fine)"
-      ).matches;
- 
-      if (isDesktop) {
-        window.open(
-          "https://mail.google.com/mail/?view=cm&fs=1" +
-            `&to=${encodeURIComponent(CONTACT_EMAIL)}` +
-            `&su=${encodeURIComponent(subject)}` +
-            `&body=${encodeURIComponent(message)}`,
-          "_blank",
-          "noopener"
-        );
-      } else {
-        window.location.href =
-          `mailto:${CONTACT_EMAIL}` +
-          `?subject=${encodeURIComponent(subject)}` +
-          `&body=${encodeURIComponent(message)}`;
-      }
+
+      window.open(
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+          `&to=${encodeURIComponent(CONTACT_EMAIL)}` +
+          `&su=${encodeURIComponent(subject)}` +
+          `&body=${encodeURIComponent(message)}`,
+        "_blank",
+        "noopener"
+      );
     }
  
     if (action === "copy") {
