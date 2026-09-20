@@ -1446,12 +1446,19 @@ body {
     background-color 0.3s ease;
 }
 
-.chip:hover .chip-text,
 .chip input:focus-visible + .chip-text,
 .chip input:checked + .chip-text {
   border-color: rgba(242, 242, 242, 0.7);
   background: rgba(242, 242, 242, 0.06);
   color: var(--text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chip:hover .chip-text {
+    border-color: rgba(242, 242, 242, 0.7);
+    background: rgba(242, 242, 242, 0.06);
+    color: var(--text);
+  }
 }
 
 .brief-grid {
