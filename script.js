@@ -186,12 +186,22 @@ window.addEventListener("resize", requestScrollUpdate);
 updateScrollEffects();
 
 const languageButtons = document.querySelectorAll(".language-button");
+const languageIntro = document.getElementById("language-intro");
+const languageIntroButtons = document.querySelectorAll(".language-intro-button");
 const translatableElements = document.querySelectorAll("[data-en][data-id]");
+
+const BRIEF_STORAGE_KEY = "portfolio-brief";
 
 function setLanguage(language) {
   translatableElements.forEach((element) => {
     element.textContent = element.dataset[language];
   });
+
+  document.querySelectorAll("[data-placeholder-en][data-placeholder-id]").forEach(
+    (element) => {
+      element.placeholder = element.getAttribute(`data-placeholder-${language}`);
+    }
+  );
 
   languageButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.lang === language);
@@ -211,15 +221,38 @@ languageButtons.forEach((button) => {
   });
 });
 
-let savedLanguage = "en";
+let savedLanguage = null;
 
 try {
-  savedLanguage = localStorage.getItem("portfolio-language") || "en";
+  savedLanguage = localStorage.getItem("portfolio-language");
 } catch (error) {
-  savedLanguage = "en";
+  savedLanguage = null;
 }
 
-setLanguage(savedLanguage);
+setLanguage(savedLanguage || "en");
+
+function closeLanguageIntro() {
+  if (!languageIntro) return;
+
+  languageIntro.classList.add("is-closing");
+
+  window.setTimeout(() => {
+    languageIntro.classList.remove("is-visible", "is-closing");
+    languageIntro.setAttribute("aria-hidden", "true");
+  }, 720);
+}
+
+languageIntroButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setLanguage(button.dataset.introLang);
+    closeLanguageIntro();
+  });
+});
+
+if (languageIntro) {
+  languageIntro.classList.add("is-visible");
+  languageIntro.setAttribute("aria-hidden", "false");
+}
 
 const YT_EMBED_URL = "https://www.youtube-nocookie.com/embed/";
 
@@ -317,3 +350,256 @@ gamingTabs.forEach((tab) => {
     playVideo(gamingStage);
   });
 });
+
+const CONTACT_WHATSAPP = "6281289678945";
+const CONTACT_EMAIL = "rmyusuf.collab@gmail.com";
+ 
+const BRIEF_COPY = {
+  en: {
+    intro: (name) =>
+      name
+        ? `Hi Yusuf, I'm ${name}. I'd like to talk about a video edit.`
+        : "Hi Yusuf, I'd like to talk about a video edit.",
+    package: "Package",
+    type: "Video type",
+    footage: "Footage",
+    deadline: "Deadline",
+    reference: "Reference",
+    details: "What I have in mind",
+    subject: (name) =>
+      name ? `Video edit inquiry — ${name}` : "Video edit inquiry",
+    copied: "COPIED",
+    failed: "COPY FAILED",
+  },
+  id: {
+    intro: (name) =>
+      name
+        ? `Halo Yusuf, saya ${name}. Saya ingin membahas editing video.`
+        : "Halo Yusuf, saya ingin membahas editing video.",
+    package: "Paket",
+    type: "Jenis video",
+    footage: "Footage",
+    deadline: "Deadline",
+    reference: "Referensi",
+    details: "Yang saya inginkan",
+    subject: (name) =>
+      name ? `Permintaan editing video — ${name}` : "Permintaan editing video",
+    copied: "TERSALIN",
+    failed: "GAGAL MENYALIN",
+  },
+};
+ 
+const briefForm = document.getElementById("brief-form");
+
+function saveBriefState() {
+  if (!briefForm) return;
+
+  const state = {};
+
+  Array.from(briefForm.elements).forEach((field) => {
+    if (!field.name) return;
+
+    if (field.type === "checkbox" || field.type === "radio") {
+      if (!state[field.name]) state[field.name] = [];
+      if (field.checked) state[field.name].push(field.value);
+      return;
+    }
+
+    state[field.name] = field.value;
+  });
+
+  try {
+    localStorage.setItem(BRIEF_STORAGE_KEY, JSON.stringify(state));
+  } catch (error) {
+  }
+}
+
+function restoreBriefState() {
+  if (!briefForm) return;
+
+  let savedState;
+
+  try {
+    savedState = JSON.parse(localStorage.getItem(BRIEF_STORAGE_KEY) || "null");
+  } catch (error) {
+    savedState = null;
+  }
+
+  if (!savedState) return;
+
+  Array.from(briefForm.elements).forEach((field) => {
+    if (!field.name || savedState[field.name] === undefined) return;
+
+    if (field.type === "checkbox" || field.type === "radio") {
+      field.checked = savedState[field.name].includes(field.value);
+      return;
+    }
+
+    field.value = savedState[field.name];
+  });
+}
+
+restoreBriefState();
+
+if (briefForm) {
+  briefForm.addEventListener("input", saveBriefState);
+  briefForm.addEventListener("change", saveBriefState);
+}
+ 
+function currentLanguage() {
+  return document.documentElement.lang === "id" ? "id" : "en";
+}
+ 
+
+function getBriefLabel(input) {
+  const label = input.closest("label");
+  const textElement = label
+    ? label.querySelector("[data-brief-label]")
+    : null;
+ 
+  return textElement ? textElement.textContent.trim() : input.value;
+}
+ 
+
+function formatBriefLabel(input) {
+  const text = getBriefLabel(input).toLowerCase();
+
+  if (input.name === "package" && input.value !== "not-sure") {
+    return text.replace(/(^|\s)(\S)/g, (match, space, letter) => {
+      return space + letter.toUpperCase();
+    });
+  }
+ 
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+ 
+function buildBriefMessage() {
+  const copy = BRIEF_COPY[currentLanguage()];
+  const field = (name) => briefForm.elements[name].value.trim();
+ 
+  const name = field("clientName");
+  const selectedPackage = briefForm.querySelector(
+    'input[name="package"]:checked'
+  );
+  const selectedFootage = briefForm.querySelector(
+    'input[name="footage"]:checked'
+  );
+  const types = Array.from(
+    briefForm.querySelectorAll('input[name="type"]:checked')
+  ).map(formatBriefLabel);
+ 
+  const rows = [
+    [copy.package, selectedPackage ? formatBriefLabel(selectedPackage) : ""],
+    [copy.type, types.map((type, index) => (index ? type.toLowerCase() : type)).join(", ")],
+    [
+      copy.footage,
+      selectedFootage && !selectedFootage.dataset.skip
+        ? formatBriefLabel(selectedFootage)
+        : "",
+    ],
+    [copy.deadline, field("deadline")],
+    [copy.reference, field("reference")],
+  ];
+ 
+  const lines = [copy.intro(name), ""];
+ 
+  rows.forEach(([label, value]) => {
+    if (value) lines.push(`${label}: ${value}`);
+  });
+ 
+  const details = field("details");
+ 
+  if (details) {
+    lines.push("", `${copy.details}:`, details);
+  }
+ 
+  return lines.join("\n");
+}
+ 
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (error) {
+
+    const area = document.createElement("textarea");
+ 
+    area.value = text;
+    area.style.position = "fixed";
+    area.style.opacity = "0";
+ 
+    document.body.appendChild(area);
+    area.select();
+ 
+    let success = false;
+ 
+    try {
+      success = document.execCommand("copy");
+    } catch (fallbackError) {
+      success = false;
+    }
+ 
+    area.remove();
+ 
+    return success;
+  }
+}
+ 
+if (briefForm) {
+  briefForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
+ 
+  briefForm.addEventListener("click", async (event) => {
+    const button = event.target.closest("[data-brief-action]");
+ 
+    if (!button) return;
+ 
+    const action = button.dataset.briefAction;
+    const copy = BRIEF_COPY[currentLanguage()];
+    const message = buildBriefMessage();
+ 
+    if (action === "whatsapp") {
+      window.open(
+        `https://wa.me/${CONTACT_WHATSAPP}?text=${encodeURIComponent(message)}`,
+        "_blank",
+        "noopener"
+      );
+    }
+ 
+    if (action === "email") {
+      const name = briefForm.elements.clientName.value.trim();
+      const subject = copy.subject(name);
+      const isDesktop = window.matchMedia(
+        "(hover: hover) and (pointer: fine)"
+      ).matches;
+ 
+      if (isDesktop) {
+        window.open(
+          "https://mail.google.com/mail/?view=cm&fs=1" +
+            `&to=${encodeURIComponent(CONTACT_EMAIL)}` +
+            `&su=${encodeURIComponent(subject)}` +
+            `&body=${encodeURIComponent(message)}`,
+          "_blank",
+          "noopener"
+        );
+      } else {
+        window.location.href =
+          `mailto:${CONTACT_EMAIL}` +
+          `?subject=${encodeURIComponent(subject)}` +
+          `&body=${encodeURIComponent(message)}`;
+      }
+    }
+ 
+    if (action === "copy") {
+      const success = await copyToClipboard(message);
+ 
+      button.textContent = success ? copy.copied : copy.failed;
+ 
+      window.setTimeout(() => {
+        button.textContent = button.dataset[currentLanguage()];
+      }, 1800);
+    }
+  });
+}
+ 
