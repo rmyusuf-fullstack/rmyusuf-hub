@@ -10,18 +10,39 @@
     <link rel="preconnect" href="https://i.ytimg.com" />
 
     <link rel="stylesheet" href="style.css" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VC2R4WVLM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-1VC2R4WVLM');
-    </script>
   </head>
 
   <body>
+    <div
+      class="language-intro is-visible"
+      id="language-intro"
+      aria-hidden="false"
+    >
+      <div class="language-intro-panel" role="dialog" aria-modal="true">
+        <p class="language-intro-label">SELECT LANGUAGE</p>
+
+        <div class="language-intro-options">
+          <button
+            type="button"
+            class="language-intro-button"
+            data-intro-lang="en"
+          >
+            EN
+          </button>
+
+          <span>/</span>
+
+          <button
+            type="button"
+            class="language-intro-button"
+            data-intro-lang="id"
+          >
+            ID
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="scroll-progress" aria-hidden="true"></div>
 
     <nav class="navbar">
@@ -750,28 +771,756 @@
           <h2>
             <span data-en="LET'S" data-id="MARI"> LET'S </span>
             <br />
-            <span data-en="BUILD." data-id="MEMBANGUN."> BUILD. </span>
+            <span data-en="WORK." data-id="KERJA."> WORK. </span>
           </h2>
 
           <p
             class="contact-description"
             data-en="Have a video that needs the right direction? Let's talk about what it needs to say."
-            data-id="Punya video yang membutuhkan arah yang tepat? Mari bicarakan apa yang ingin disampaikan."
+            data-id="Punya video yang membutuhkan arah yang tepat? Mari bicarakan apa yang ingin disampaikannya."
           >
             Have a video that needs the right direction? Let's talk about what
             it needs to say.
           </p>
 
+          <!-- PRIMARY CTA -->
+
           <a
-            href="mailto:rmyusuf.collab@gmail.com"
+            href="#brief"
             class="contact-button"
-            data-en="GET IN TOUCH"
-            data-id="HUBUNGI SAYA"
+            data-en="START WITH A BRIEF"
+            data-id="MULAI DENGAN BRIEF"
           >
-            GET IN TOUCH
+            START WITH A BRIEF
           </a>
 
+          <div class="offer" id="brief">
+            <div class="offer-step">
+              <span class="offer-number">01</span>
+
+              <div class="offer-content">
+                <h3 data-en="HOW PRICING WORKS" data-id="CARA KERJA HARGA">
+                  HOW PRICING WORKS
+                </h3>
+
+                <p
+                  class="offer-text"
+                  data-en="Every video is different, so there is no single price per video. Four things shape the quote, and each package below gives you a starting range."
+                  data-id="Setiap video berbeda, jadi tidak ada satu harga untuk semua video. Ada empat hal yang menentukan penawaran, dan setiap paket di bawah memberi kisaran awal."
+                >
+                  Every video is different, so there is no single price per
+                  video. Four things shape the quote, and each package below
+                  gives you a starting range.
+                </p>
+
+                <div class="factors">
+                  <div class="factor">
+                    <span
+                      class="factor-title"
+                      data-en="DURATION"
+                      data-id="DURASI"
+                    >
+                      DURATION
+                    </span>
+
+                    <p
+                      data-en="The length of the final video."
+                      data-id="Panjang video akhir."
+                    >
+                      The length of the final video.
+                    </p>
+                  </div>
+
+                  <div class="factor">
+                    <span
+                      class="factor-title"
+                      data-en="FOOTAGE"
+                      data-id="FOOTAGE"
+                    >
+                      FOOTAGE
+                    </span>
+
+                    <p
+                      data-en="How much raw material has to be sorted through."
+                      data-id="Seberapa banyak footage mentah yang harus diseleksi."
+                    >
+                      How much raw material has to be sorted through.
+                    </p>
+                  </div>
+
+                  <div class="factor">
+                    <span
+                      class="factor-title"
+                      data-en="TREATMENT"
+                      data-id="TREATMENT"
+                    >
+                      TREATMENT
+                    </span>
+
+                    <p
+                      data-en="How much motion, color, and sound design it needs."
+                      data-id="Seberapa banyak motion, color, dan sound design yang dibutuhkan."
+                    >
+                      How much motion, color, and sound design it needs.
+                    </p>
+                  </div>
+
+                  <div class="factor">
+                    <span
+                      class="factor-title"
+                      data-en="TIMELINE"
+                      data-id="WAKTU"
+                    >
+                      TIMELINE
+                    </span>
+
+                    <p
+                      data-en="The deadline and the number of revisions."
+                      data-id="Deadline dan jumlah revisi."
+                    >
+                      The deadline and the number of revisions.
+                    </p>
+                  </div>
+                </div>
+
+                <p
+                  class="offer-note"
+                  data-en="The final price is confirmed once we've gone through your brief together."
+                  data-id="Harga final dikonfirmasi setelah kita bahas brief-mu bersama."
+                >
+                  The final price is confirmed once we've gone through your
+                  brief together.
+                </p>
+              </div>
+            </div>
+
+            <form class="brief-form" id="brief-form" novalidate>
+              <!-- 02 — PAKET -->
+              <div class="offer-step">
+                <span class="offer-number">02</span>
+
+                <div class="offer-content">
+                  <h3>
+                    <span
+                      data-en="CHOOSE A STARTING POINT"
+                      data-id="PILIH TITIK AWAL"
+                    >
+                      CHOOSE A STARTING POINT
+                    </span>
+                    <span
+                      class="offer-optional"
+                      data-en="OPTIONAL"
+                      data-id="OPSIONAL"
+                    >
+                      OPTIONAL
+                    </span>
+                  </h3>
+
+                  <p
+                    class="offer-text"
+                    data-en="Just a rough starting point. Not sure yet? Leave it and I'll recommend one."
+                    data-id="Sekadar arah awal. Belum yakin? Lewati saja, nanti saya bantu pilihkan."
+                  >
+                    Just a rough starting point. Not sure yet? Leave it and I'll
+                    recommend one.
+                  </p>
+
+                  <div class="packages">
+                    <label class="package">
+                      <input type="radio" name="package" value="starter" />
+                      <span class="package-body">
+                        <span
+                          class="package-name"
+                          data-brief-label
+                          data-en="STARTER CUT"
+                          data-id="STARTER CUT"
+                        >
+                          STARTER CUT
+                        </span>
+                        <span class="package-price">
+                          <span
+                            class="package-from"
+                            data-en="FROM"
+                            data-id="MULAI DARI"
+                          >
+                            FROM
+                          </span>
+                          <span
+                            class="package-amount"
+                            data-en="$15.63"
+                            data-id="Rp 250.000"
+                          >
+                            $15.63
+                          </span>
+                        </span>
+                        <span
+                          class="package-desc"
+                          data-en="Clean cuts, captions, trending audio, and simple transitions for Reels, TikTok, and UGC."
+                          data-id="Cutting rapi, caption, trending audio, dan transisi simpel untuk Reels, TikTok, dan UGC."
+                        >
+                          Clean cuts, captions, trending audio, and simple
+                          transitions for Reels, TikTok, and UGC.
+                        </span>
+                        <span class="package-specs">
+                          <span class="package-spec">
+                            <span
+                              class="package-spec-label"
+                              data-en="LENGTH"
+                              data-id="DURASI"
+                              >LENGTH</span
+                            >
+                            <span
+                              class="package-spec-value"
+                              data-en="Up to 60 sec"
+                              data-id="Sampai 60 detik"
+                              >Up to 60 sec</span
+                            >
+                          </span>
+                          <span class="package-spec">
+                            <span
+                              class="package-spec-label"
+                              data-en="REVISIONS"
+                              data-id="REVISI"
+                              >REVISIONS</span
+                            >
+                            <span
+                              class="package-spec-value"
+                              data-en="1 revision"
+                              data-id="1x"
+                              >1 revision</span
+                            >
+                          </span>
+                          <span class="package-spec">
+                            <span
+                              class="package-spec-label"
+                              data-en="TURNAROUND"
+                              data-id="ESTIMASI"
+                              >TURNAROUND</span
+                            >
+                            <span
+                              class="package-spec-value"
+                              data-en="1–2 days"
+                              data-id="1–2 hari"
+                              >1–2 days</span
+                            >
+                          </span>
+                        </span>
+                      </span>
+                    </label>
+
+                    <label class="package">
+                      <input type="radio" name="package" value="signature" />
+                      <span class="package-body">
+                        <span
+                          class="package-name"
+                          data-brief-label
+                          data-en="SIGNATURE CINEMATIC"
+                          data-id="SIGNATURE CINEMATIC"
+                        >
+                          SIGNATURE CINEMATIC
+                        </span>
+                        <span class="package-price">
+                          <span
+                            class="package-from"
+                            data-en="FROM"
+                            data-id="MULAI DARI"
+                          >
+                            FROM
+                          </span>
+                          <span
+                            class="package-amount"
+                            data-en="$56.25"
+                            data-id="Rp 900.000"
+                          >
+                            $56.25
+                          </span>
+                        </span>
+                        <span
+                          class="package-desc"
+                          data-en="Storytelling, sound design, smooth motion, and cinematic color grading. My signature look for YouTube and brand videos."
+                          data-id="Storytelling, sound design, motion yang halus, dan color grading sinematik. Gaya khas saya untuk YouTube dan video brand."
+                        >
+                          Storytelling, sound design, smooth motion, and
+                          cinematic color grading. My signature look for YouTube
+                          and brand videos.
+                        </span>
+                        <span class="package-specs">
+                          <span class="package-spec">
+                            <span
+                              class="package-spec-label"
+                              data-en="LENGTH"
+                              data-id="DURASI"
+                              >LENGTH</span
+                            >
+                            <span
+                              class="package-spec-value"
+                              data-en="3–10 min"
+                              data-id="3–10 menit"
+                              >3–10 min</span
+                            >
+                          </span>
+                          <span class="package-spec">
+                            <span
+                              class="package-spec-label"
+                              data-en="REVISIONS"
+                              data-id="REVISI"
+                              >REVISIONS</span
+                            >
+                            <span
+                              class="package-spec-value"
+                              data-en="2 revisions"
+                              data-id="2x"
+                              >2 revisions</span
+                            >
+                          </span>
+                          <span class="package-spec">
+                            <span
+                              class="package-spec-label"
+                              data-en="TURNAROUND"
+                              data-id="ESTIMASI"
+                              >TURNAROUND</span
+                            >
+                            <span
+                              class="package-spec-value"
+                              data-en="3–5 days"
+                              data-id="3–5 hari"
+                              >3–5 days</span
+                            >
+                          </span>
+                        </span>
+                      </span>
+                    </label>
+
+                    <label class="package">
+                      <input type="radio" name="package" value="premium" />
+                      <span class="package-body">
+                        <span
+                          class="package-name"
+                          data-brief-label
+                          data-en="PREMIUM PRODUCTION"
+                          data-id="PREMIUM PRODUCTION"
+                        >
+                          PREMIUM PRODUCTION
+                        </span>
+                        <span class="package-price">
+                          <span
+                            class="package-amount"
+                            data-en="CUSTOM QUOTE"
+                            data-id="SESUAI BRIEF"
+                          >
+                            CUSTOM QUOTE
+                          </span>
+                        </span>
+                        <span
+                          class="package-desc"
+                          data-en="Full cinematic grade, motion graphics, compositing, and light VFX for company profiles, ads, and documentaries."
+                          data-id="Color grade sinematik penuh, motion graphics, compositing, dan VFX ringan untuk company profile, iklan, dan dokumenter."
+                        >
+                          Full cinematic grade, motion graphics, compositing,
+                          and light VFX for company profiles, ads, and
+                          documentaries.
+                        </span>
+                        <span class="package-specs">
+                          <span class="package-spec">
+                            <span
+                              class="package-spec-label"
+                              data-en="LENGTH"
+                              data-id="DURASI"
+                              >LENGTH</span
+                            >
+                            <span
+                              class="package-spec-value"
+                              data-en="Flexible, multi-length"
+                              data-id="Fleksibel, bisa multi-durasi"
+                              >Flexible, multi-length</span
+                            >
+                          </span>
+                          <span class="package-spec">
+                            <span
+                              class="package-spec-label"
+                              data-en="REVISIONS"
+                              data-id="REVISI"
+                              >REVISIONS</span
+                            >
+                            <span
+                              class="package-spec-value"
+                              data-en="3 revisions"
+                              data-id="3x"
+                              >3 revisions</span
+                            >
+                          </span>
+                          <span class="package-spec">
+                            <span
+                              class="package-spec-label"
+                              data-en="TURNAROUND"
+                              data-id="ESTIMASI"
+                              >TURNAROUND</span
+                            >
+                            <span
+                              class="package-spec-value"
+                              data-en="5–10 days"
+                              data-id="5–10 hari"
+                              >5–10 days</span
+                            >
+                          </span>
+                        </span>
+                      </span>
+                    </label>
+
+                    <label class="package">
+                      <input type="radio" name="package" value="a-la-carte" />
+                      <span class="package-body">
+                        <span
+                          class="package-name"
+                          data-brief-label
+                          data-en="À LA CARTE"
+                          data-id="À LA CARTE"
+                        >
+                          À LA CARTE
+                        </span>
+                        <span class="package-price">
+                          <span
+                            class="package-amount"
+                            data-en="CUSTOM QUOTE"
+                            data-id="SESUAI BRIEF"
+                          >
+                            CUSTOM QUOTE
+                          </span>
+                        </span>
+                        <span
+                          class="package-desc"
+                          data-en="Need just one part of the process? Pick a single service, like color grading or sound design, for footage that's already cut."
+                          data-id="Butuh satu bagian saja? Pilih satu layanan, misalnya color grading atau sound design, untuk footage yang sudah dipotong."
+                        >
+                          Need just one part of the process? Pick a single
+                          service, like color grading or sound design, for
+                          footage that's already cut.
+                        </span>
+                      </span>
+                    </label>
+
+                    <label class="package package--open">
+                      <input
+                        type="radio"
+                        name="package"
+                        value="not-sure"
+                        checked
+                      />
+                      <span class="package-body">
+                        <span
+                          class="package-name"
+                          data-brief-label
+                          data-en="NOT SURE YET — RECOMMEND ONE FOR ME"
+                          data-id="BELUM YAKIN — TOLONG REKOMENDASIKAN"
+                        >
+                          NOT SURE YET — RECOMMEND ONE FOR ME
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <p
+                    class="offer-note package-note"
+                    data-en="Listed prices are starting points. Multiple videos, longer runtimes, or tight deadlines will change the quote."
+                    data-id="Harga yang tertera adalah titik awal. Jumlah video, durasi yang lebih panjang, atau deadline mepet akan memengaruhi penawaran."
+                  >
+                    Listed prices are starting points. Multiple videos, longer
+                    runtimes, or tight deadlines will change the quote.
+                  </p>
+                </div>
+              </div>
+
+              <div class="offer-step">
+                <span class="offer-number">03</span>
+
+                <div class="offer-content">
+                  <h3
+                    data-en="TELL ME WHAT YOU NEED"
+                    data-id="CERITAKAN KEBUTUHANMU"
+                  >
+                    TELL ME WHAT YOU NEED
+                  </h3>
+
+                  <p
+                    class="offer-text"
+                    data-en="No need to be neat. Write it however it comes. Everything here is optional, and I'll ask the follow-up questions."
+                    data-id="Tidak perlu rapi. Tulis saja apa adanya. Semua kolom bersifat opsional, pertanyaan lanjutannya biar saya yang tanya."
+                  >
+                    No need to be neat. Write it however it comes. Everything
+                    here is optional, and I'll ask the follow-up questions.
+                  </p>
+
+                  <div class="brief-fields">
+                    <div class="brief-group">
+                      <span
+                        class="brief-label"
+                        data-en="WHAT KIND OF VIDEO"
+                        data-id="JENIS VIDEO"
+                      >
+                        WHAT KIND OF VIDEO
+                      </span>
+
+                      <div class="chips">
+                        <label class="chip">
+                          <input type="checkbox" name="type" value="short" />
+                          <span
+                            class="chip-text"
+                            data-brief-label
+                            data-en="SHORT FORM"
+                            data-id="SHORT FORM"
+                          >
+                            SHORT FORM
+                          </span>
+                        </label>
+
+                        <label class="chip">
+                          <input type="checkbox" name="type" value="long" />
+                          <span
+                            class="chip-text"
+                            data-brief-label
+                            data-en="LONG FORM"
+                            data-id="LONG FORM"
+                          >
+                            LONG FORM
+                          </span>
+                        </label>
+
+                        <label class="chip">
+                          <input type="checkbox" name="type" value="gaming" />
+                          <span
+                            class="chip-text"
+                            data-brief-label
+                            data-en="GAMING"
+                            data-id="GAMING"
+                          >
+                            GAMING
+                          </span>
+                        </label>
+
+                        <label class="chip">
+                          <input type="checkbox" name="type" value="doc" />
+                          <span
+                            class="chip-text"
+                            data-brief-label
+                            data-en="DOCUMENTARY"
+                            data-id="DOKUMENTER"
+                          >
+                            DOCUMENTARY
+                          </span>
+                        </label>
+
+                        <label class="chip">
+                          <input type="checkbox" name="type" value="other" />
+                          <span
+                            class="chip-text"
+                            data-brief-label
+                            data-en="OTHER"
+                            data-id="LAINNYA"
+                          >
+                            OTHER
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="brief-group">
+                      <label
+                        class="brief-label"
+                        for="brief-details"
+                        data-en="IN YOUR OWN WORDS"
+                        data-id="DENGAN KATA-KATAMU SENDIRI"
+                      >
+                        IN YOUR OWN WORDS
+                      </label>
+
+                      <textarea
+                        class="brief-textarea"
+                        id="brief-details"
+                        name="details"
+                        rows="6"
+                        placeholder="What is the video about, who is it for, what should it feel like, and what are you unsure about?"
+                        data-placeholder-en="What is the video about, who is it for, what should it feel like, and what are you unsure about?"
+                        data-placeholder-id="Videonya tentang apa, untuk siapa, kesan apa yang diinginkan, dan apa yang masih kamu ragukan?"
+                      ></textarea>
+                    </div>
+
+                    <div class="brief-group">
+                      <span
+                        class="brief-label"
+                        data-en="YOUR FOOTAGE"
+                        data-id="FOOTAGE KAMU"
+                      >
+                        YOUR FOOTAGE
+                      </span>
+
+                      <div class="chips">
+                        <label class="chip">
+                          <input type="radio" name="footage" value="raw" />
+                          <span
+                            class="chip-text"
+                            data-brief-label
+                            data-en="RAW FOOTAGE"
+                            data-id="FOOTAGE MENTAH"
+                          >
+                            RAW FOOTAGE
+                          </span>
+                        </label>
+
+                        <label class="chip">
+                          <input type="radio" name="footage" value="rough" />
+                          <span
+                            class="chip-text"
+                            data-brief-label
+                            data-en="ROUGH CUT READY"
+                            data-id="SUDAH ADA ROUGH CUT"
+                          >
+                            ROUGH CUT READY
+                          </span>
+                        </label>
+
+                        <label class="chip">
+                          <input
+                            type="radio"
+                            name="footage"
+                            value="unsure"
+                            data-skip="true"
+                            checked
+                          />
+                          <span
+                            class="chip-text"
+                            data-brief-label
+                            data-en="NOT SURE"
+                            data-id="BELUM TAHU"
+                          >
+                            NOT SURE
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="brief-grid brief-group">
+                      <div class="brief-field">
+                        <label
+                          class="brief-label"
+                          for="brief-name"
+                          data-en="YOUR NAME"
+                          data-id="NAMAMU"
+                        >
+                          YOUR NAME
+                        </label>
+
+                        <input
+                          class="brief-input"
+                          id="brief-name"
+                          name="clientName"
+                          type="text"
+                          autocomplete="name"
+                        />
+                      </div>
+
+                      <div class="brief-field">
+                        <label
+                          class="brief-label"
+                          for="brief-deadline"
+                          data-en="DEADLINE"
+                          data-id="DEADLINE"
+                        >
+                          DEADLINE
+                        </label>
+
+                        <input
+                          class="brief-input"
+                          id="brief-deadline"
+                          name="deadline"
+                          type="text"
+                          placeholder="e.g. end of next week, or no rush"
+                          data-placeholder-en="e.g. end of next week, or no rush"
+                          data-placeholder-id="mis. akhir minggu depan, atau santai"
+                        />
+                      </div>
+
+                      <div class="brief-field brief-field--full">
+                        <label
+                          class="brief-label"
+                          for="brief-reference"
+                          data-en="A REFERENCE YOU LIKE"
+                          data-id="REFERENSI YANG KAMU SUKA"
+                        >
+                          A REFERENCE YOU LIKE
+                        </label>
+
+                        <input
+                          class="brief-input"
+                          id="brief-reference"
+                          name="reference"
+                          type="text"
+                          placeholder="A link to a video whose style you like (YouTube, TikTok, Instagram…)"
+                          data-placeholder-en="A link to a video whose style you like (YouTube, TikTok, Instagram…)"
+                          data-placeholder-id="Link video dengan gaya yang kamu suka (YouTube, TikTok, Instagram…)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="offer-step">
+                <span class="offer-number">04</span>
+
+                <div class="offer-content">
+                  <h3 data-en="SEND IT" data-id="KIRIM">SEND IT</h3>
+
+                  <p
+                    class="offer-text"
+                    data-en="This opens WhatsApp or your email app with your brief already filled in. Nothing is sent until you press send there."
+                    data-id="Ini membuka WhatsApp atau aplikasi emailmu dengan brief yang sudah terisi. Tidak ada yang terkirim sebelum kamu menekan kirim di sana."
+                  >
+                    This opens WhatsApp or your email app with your brief
+                    already filled in. Nothing is sent until you press send
+                    there.
+                  </p>
+
+                  <div class="brief-actions">
+                    <button
+                      type="button"
+                      class="brief-button brief-button--primary"
+                      data-brief-action="whatsapp"
+                      data-en="SEND VIA WHATSAPP"
+                      data-id="KIRIM VIA WHATSAPP"
+                    >
+                      SEND VIA WHATSAPP
+                    </button>
+
+                    <button
+                      type="button"
+                      class="brief-button"
+                      data-brief-action="email"
+                      data-en="SEND VIA EMAIL"
+                      data-id="KIRIM VIA EMAIL"
+                    >
+                      SEND VIA EMAIL
+                    </button>
+
+                    <button
+                      type="button"
+                      class="brief-button brief-button--ghost"
+                      data-brief-action="copy"
+                      data-en="COPY MESSAGE"
+                      data-id="SALIN PESAN"
+                    >
+                      COPY MESSAGE
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- CONTACT DETAILS -->
+
           <div class="contact-details">
+            <!-- EMAIL -->
+
             <div class="contact-method">
               <span
                 class="contact-method-label"
@@ -794,6 +1543,8 @@
                 OPEN EMAIL
               </a>
             </div>
+
+            <!-- WHATSAPP -->
 
             <div class="contact-method">
               <span
@@ -825,6 +1576,8 @@
               </a>
             </div>
           </div>
+
+          <!-- FOOTER -->
 
           <div class="contact-footer">
             <div class="contact-brand">R. M. YUSUF</div>
