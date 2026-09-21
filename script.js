@@ -15,6 +15,9 @@ const FADE_SELECTOR = [
   ".tool",
   ".tools-note",
   ".project-intro",
+  ".cases-intro",
+  ".case-header",
+  ".case-notes",
   ".gaming-tabs",
   ".contact-description",
   ".contact-button",
@@ -320,6 +323,95 @@ function playVideo(player) {
   player.classList.add("is-playing");
   player.replaceChildren(iframe);
 }
+
+document.querySelectorAll(".case").forEach((caseElement) => {
+  const switchElement = caseElement.querySelector(".case-switch");
+  const allVersions = Array.from(caseElement.querySelectorAll(".case-version"));
+  const versions = allVersions.filter((version) => (version.dataset.videoId || "").trim());
+  const notes = Array.from(caseElement.querySelectorAll(".case-note"));
+  const orientation = caseElement.dataset.orientation || "landscape";
+  const stage = caseElement.querySelector(".case-stage");
+  const player = stage ? stage.querySelector(".yt-player") : null;
+  const briefNote = caseElement.querySelector('.case-note[data-version="brief"]');
+  const activeVersion = versions.find((version) => version.classList.contains("active")) || versions[0];
+
+  caseElement.dataset.orientation = orientation;
+
+  if (player) {
+    player.classList.toggle("yt-player--vertical", orientation === "portrait");
+  }
+
+  notes.forEach((note) => {
+    note.hidden = note.dataset.version !== (activeVersion?.dataset.version || "brief");
+  });
+
+  if (versions.length < 2 || !switchElement) {
+    if (switchElement) switchElement.hidden = true;
+    if (briefNote) briefNote.hidden = false;
+    const takeNote = caseElement.querySelector('.case-note[data-version="take"]');
+    if (takeNote) takeNote.hidden = true;
+    if (player) delete player.dataset.tag;
+  } else {
+    versions.forEach((version) => {
+      version.addEventListener("click", () => {
+        const alreadyActive = version.classList.contains("active");
+
+        versions.forEach((item) => {
+          const isActive = item === version;
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+
+        if (alreadyActive) {
+          if (player && !player.classList.contains("is-playing")) {
+            playVideo(player);
+          }
+          return;
+        }
+
+        if (!stage || !player) return;
+
+        notes.forEach((note) => {
+          note.hidden = note.dataset.version !== version.dataset.version;
+        });
+
+        player.dataset.videoId = version.dataset.videoId || "";
+        player.dataset.title = version.dataset.title || "Video";
+
+        if (version.dataset.tag) {
+          player.dataset.tag = version.dataset.tag;
+        } else {
+          delete player.dataset.tag;
+        }
+
+        if ((version.dataset.orientation || orientation) !== orientation) {
+          stage.dataset.fit = "contain";
+        } else {
+          delete stage.dataset.fit;
+        }
+
+        playVideo(player);
+      });
+    });
+  }
+
+  if (activeVersion && versions.length >= 2 && player) {
+    player.dataset.tag = activeVersion.dataset.tag || "";
+  }
+
+  caseElement.querySelectorAll(".case-more").forEach((moreButton) => {
+    moreButton.addEventListener("click", () => {
+      const note = moreButton.closest(".case-note");
+      const moreContent = note ? note.querySelector(".case-more-content") : null;
+
+      if (!moreContent) return;
+
+      const expanded = moreButton.getAttribute("aria-expanded") === "true";
+      moreButton.setAttribute("aria-expanded", String(!expanded));
+      moreContent.hidden = expanded;
+    });
+  });
+});
 
 document.querySelectorAll(".yt-player").forEach(renderPoster);
 
