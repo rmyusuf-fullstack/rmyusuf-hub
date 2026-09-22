@@ -6,6 +6,9 @@
 
     <title>R. M. Yusuf — Video Editor</title>
 
+    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="favicon.png" type="image/png" />
+
     <link rel="preconnect" href="https://www.youtube-nocookie.com" />
     <link rel="preconnect" href="https://i.ytimg.com" />
 
@@ -217,6 +220,16 @@
               </p>
             </div>
 
+            <!--
+              Panduan menambah project:
+              1. Salin seluruh blok article class case sampai penutupnya.
+              2. Atur data-orientation menjadi landscape atau portrait.
+              3. Isi ID video, judul, tag, dan deskripsi dalam versi EN dan ID.
+              4. Opsional: isi ID video MY TAKE dan teksnya. Jika dikosongkan, tombol dan panelnya hilang otomatis.
+              Label item tersedia: ABOUT THIS EDIT / TENTANG EDIT INI, BRIEF / BRIEF, REFERENCE / REFERENSI, WHAT I DID / YANG SAYA LAKUKAN, WHAT I CHANGED / YANG SAYA UBAH, WHY / ALASANNYA, MY TAKE / VERSI SAYA.
+              Contoh item: ABOUT THIS EDIT dengan deskripsi tentang edit. Contoh tag fitur: COLOR GRADING.
+              Isi case-number manual secara berurutan, dan setiap data-en wajib memiliki data-id.
+            -->
             <article class="case" data-orientation="portrait">
               <header class="case-header">
                 <span class="case-number">01</span>
@@ -1081,19 +1094,19 @@
                   </p>
 
                   <div class="packages">
-                    <!-- STARTER CUT -->
+                    <!-- QUICK EDIT -->
 
                     <label class="package">
-                      <input type="radio" name="package" value="starter" />
+                      <input type="radio" name="package" value="quick-edit" />
 
                       <span class="package-body">
                         <span
                           class="package-name"
                           data-brief-label
-                          data-en="STARTER CUT"
-                          data-id="STARTER CUT"
+                          data-en="QUICK EDIT"
+                          data-id="QUICK EDIT"
                         >
-                          STARTER CUT
+                          QUICK EDIT
                         </span>
 
                         <span class="package-price">
@@ -1107,93 +1120,159 @@
 
                           <span
                             class="package-amount"
-                            data-en="$15.63"
+                            data-en="Rp&nbsp;50.000"
+                            data-id="Rp&nbsp;50.000"
+                          >
+                            Rp&nbsp;50.000
+                          </span>
+                        </span>
+
+                        <span
+                          class="package-desc"
+                          data-en="Fast, clean editing for short-form content with auto captions, basic audio adjustments, and simple visual touches."
+                          data-id="Editing cepat dan rapi untuk konten short-form dengan auto captions, penyesuaian audio dasar, dan sentuhan visual sederhana."
+                        >
+                          Fast, clean editing for short-form content with auto
+                          captions, basic audio adjustments, and simple visual
+                          touches.
+                        </span>
+
+                        <ul class="package-features">
+                          <li data-en="Clean Cuts" data-id="Clean Cuts">
+                            Clean Cuts
+                          </li>
+                          <li data-en="Auto Captions" data-id="Auto Captions">
+                            Auto Captions
+                          </li>
+                          <li
+                            data-en="Basic Audio Adjustment"
+                            data-id="Basic Audio Adjustment"
+                          >
+                            Basic Audio Adjustment
+                          </li>
+                          <li
+                            data-en="Basic Visual Adjustments"
+                            data-id="Basic Visual Adjustments"
+                          >
+                            Basic Visual Adjustments
+                          </li>
+                          <li
+                            data-en="Simple Transitions"
+                            data-id="Simple Transitions"
+                          >
+                            Simple Transitions
+                          </li>
+                        </ul>
+
+                        <span
+                          class="package-tool"
+                          data-en="Edited with CapCut Pro for fast turnaround."
+                          data-id="Diedit pakai CapCut Pro untuk hasil cepat."
+                        >
+                          Edited with CapCut Pro for fast turnaround.
+                        </span>
+                      </span>
+                    </label>
+
+                    <!-- ESSENTIAL EDIT -->
+
+                    <label class="package">
+                      <input
+                        type="radio"
+                        name="package"
+                        value="essential-edit"
+                      />
+
+                      <span class="package-body">
+                        <span
+                          class="package-name"
+                          data-brief-label
+                          data-en="ESSENTIAL EDIT"
+                          data-id="ESSENTIAL EDIT"
+                        >
+                          ESSENTIAL EDIT
+                        </span>
+
+                        <span class="package-price">
+                          <span
+                            class="package-from"
+                            data-en="FROM"
+                            data-id="MULAI DARI"
+                          >
+                            FROM
+                          </span>
+
+                          <span
+                            class="package-amount"
+                            data-en="Rp&nbsp;250.000"
                             data-id="Rp&nbsp;250.000"
                           >
-                            $15.63
+                            Rp&nbsp;250.000
                           </span>
                         </span>
 
                         <span
                           class="package-desc"
-                          data-en="Clean cuts, styled captions, trending audio, and simple transitions for Reels, TikTok, and UGC."
-                          data-id="Cutting rapi, styled captions, trending audio, dan transisi simpel untuk Reels, TikTok, dan UGC."
+                          data-en="Clean editing with custom animated captions, music, sound effects, and smooth transitions for short-form content."
+                          data-id="Editing yang rapi dengan custom animated captions, musik, sound effects, dan smooth transitions untuk konten short-form."
                         >
-                          Clean cuts, styled captions, trending audio, and
-                          simple transitions for Reels, TikTok, and UGC.
+                          Clean editing with custom animated captions, music,
+                          sound effects, and smooth transitions for short-form
+                          content.
                         </span>
 
-                        <span class="package-specs">
-                          <span class="package-spec">
-                            <span
-                              class="package-spec-label"
-                              data-en="LENGTH"
-                              data-id="DURASI"
-                            >
-                              LENGTH
-                            </span>
-
-                            <span
-                              class="package-spec-value"
-                              data-en="Up to 60 sec"
-                              data-id="Sampai 60 detik"
-                            >
-                              Up to 60 sec
-                            </span>
-                          </span>
-
-                          <span class="package-spec">
-                            <span
-                              class="package-spec-label"
-                              data-en="REVISIONS"
-                              data-id="REVISI"
-                            >
-                              REVISIONS
-                            </span>
-
-                            <span
-                              class="package-spec-value"
-                              data-en="1 revision"
-                              data-id="1x"
-                            >
-                              1 revision
-                            </span>
-                          </span>
-
-                          <span class="package-spec">
-                            <span
-                              class="package-spec-label"
-                              data-en="TURNAROUND"
-                              data-id="ESTIMASI"
-                            >
-                              TURNAROUND
-                            </span>
-
-                            <span
-                              class="package-spec-value"
-                              data-en="1–2 days"
-                              data-id="1–2 hari"
-                            >
-                              1–2 days
-                            </span>
-                          </span>
-                        </span>
+                        <ul class="package-features">
+                          <li data-en="Clean Cuts" data-id="Clean Cuts">
+                            Clean Cuts
+                          </li>
+                          <li
+                            data-en="Custom Animated Captions"
+                            data-id="Custom Animated Captions"
+                          >
+                            Custom Animated Captions
+                          </li>
+                          <li
+                            data-en="Music & Sound Effects"
+                            data-id="Music & Sound Effects"
+                          >
+                            Music & Sound Effects
+                          </li>
+                          <li
+                            data-en="Basic Color Correction"
+                            data-id="Basic Color Correction"
+                          >
+                            Basic Color Correction
+                          </li>
+                          <li
+                            data-en="Smooth Transitions"
+                            data-id="Smooth Transitions"
+                          >
+                            Smooth Transitions
+                          </li>
+                          <li data-en="Basic Motion" data-id="Basic Motion">
+                            Basic Motion
+                          </li>
+                        </ul>
                       </span>
                     </label>
 
-                    <!-- SIGNATURE CINEMATIC -->
+                    <!-- SIGNATURE EDIT -->
 
                     <label class="package">
-                      <input type="radio" name="package" value="signature" />
+                      <input
+                        type="radio"
+                        name="package"
+                        value="signature-edit"
+                      />
 
                       <span class="package-body">
                         <span
                           class="package-name"
                           data-brief-label
-                          data-en="SIGNATURE CINEMATIC"
-                          data-id="SIGNATURE CINEMATIC"
+                          data-en="SIGNATURE EDIT"
+                          data-id="SIGNATURE EDIT"
                         >
-                          SIGNATURE CINEMATIC
+                          SIGNATURE EDIT
                         </span>
 
                         <span class="package-price">
@@ -1207,93 +1286,72 @@
 
                           <span
                             class="package-amount"
-                            data-en="$56.25"
+                            data-en="Rp&nbsp;900.000"
                             data-id="Rp&nbsp;900.000"
                           >
-                            $56.25
+                            Rp&nbsp;900.000
                           </span>
                         </span>
 
                         <span
                           class="package-desc"
-                          data-en="Storytelling, sound design, smooth motion, and cinematic color grading for YouTube and brand videos."
-                          data-id="Storytelling, sound design, motion yang halus, dan color grading sinematik untuk YouTube dan video brand."
+                          data-en="Story-driven editing with sound design, smooth motion, and intentional color treatment for YouTube and brand videos."
+                          data-id="Editing berbasis storytelling dengan sound design, smooth motion, dan color treatment yang terarah untuk video YouTube dan brand."
                         >
-                          Storytelling, sound design, smooth motion, and
-                          cinematic color grading for YouTube and brand videos.
+                          Story-driven editing with sound design, smooth motion,
+                          and intentional color treatment for YouTube and brand
+                          videos.
                         </span>
 
-                        <span class="package-specs">
-                          <span class="package-spec">
-                            <span
-                              class="package-spec-label"
-                              data-en="LENGTH"
-                              data-id="DURASI"
-                            >
-                              LENGTH
-                            </span>
-
-                            <span
-                              class="package-spec-value"
-                              data-en="3–10 min"
-                              data-id="3–10 menit"
-                            >
-                              3–10 min
-                            </span>
-                          </span>
-
-                          <span class="package-spec">
-                            <span
-                              class="package-spec-label"
-                              data-en="REVISIONS"
-                              data-id="REVISI"
-                            >
-                              REVISIONS
-                            </span>
-
-                            <span
-                              class="package-spec-value"
-                              data-en="2 revisions"
-                              data-id="2x"
-                            >
-                              2 revisions
-                            </span>
-                          </span>
-
-                          <span class="package-spec">
-                            <span
-                              class="package-spec-label"
-                              data-en="TURNAROUND"
-                              data-id="ESTIMASI"
-                            >
-                              TURNAROUND
-                            </span>
-
-                            <span
-                              class="package-spec-value"
-                              data-en="3–5 days"
-                              data-id="3–5 hari"
-                            >
-                              3–5 days
-                            </span>
-                          </span>
-                        </span>
+                        <ul class="package-features">
+                          <li
+                            data-en="Story-driven Editing"
+                            data-id="Story-driven Editing"
+                          >
+                            Story-driven Editing
+                          </li>
+                          <li
+                            data-en="Custom Motion & Animation"
+                            data-id="Custom Motion & Animation"
+                          >
+                            Custom Motion & Animation
+                          </li>
+                          <li data-en="Sound Design" data-id="Sound Design">
+                            Sound Design
+                          </li>
+                          <li data-en="Color Grading" data-id="Color Grading">
+                            Color Grading
+                          </li>
+                          <li data-en="Visual Effects" data-id="Visual Effects">
+                            Visual Effects
+                          </li>
+                          <li
+                            data-en="Advanced Transitions"
+                            data-id="Advanced Transitions"
+                          >
+                            Advanced Transitions
+                          </li>
+                        </ul>
                       </span>
                     </label>
 
-                    <!-- PREMIUM PRODUCTION -->
+                    <!-- ADVANCED EDIT -->
 
                     <label class="package">
-                      <input type="radio" name="package" value="premium" />
+                      <input
+                        type="radio"
+                        name="package"
+                        value="advanced-edit"
+                      />
 
                       <span class="package-body">
                         <span
                           class="package-name"
                           data-brief-label
-                          data-en="PREMIUM PRODUCTION"
-                          data-id="PREMIUM PRODUCTION"
+                          data-en="ADVANCED EDIT"
+                          data-id="ADVANCED EDIT"
                         >
-                          PREMIUM PRODUCTION
+                          ADVANCED EDIT
                         </span>
 
                         <span class="package-price">
@@ -1308,68 +1366,54 @@
 
                         <span
                           class="package-desc"
-                          data-en="Cinematic color grading, motion graphics, compositing, and light VFX for company profiles, advertising, and documentaries."
-                          data-id="Color grading sinematik, motion graphics, compositing, dan VFX ringan untuk company profile, iklan, dan dokumenter."
+                          data-en="Advanced color, motion graphics, compositing, and visual effects for projects that require a more involved editing process."
+                          data-id="Advanced color grading, motion graphics, compositing, dan visual effects untuk project yang membutuhkan proses editing yang lebih kompleks dan mendalam."
                         >
-                          Cinematic color grading, motion graphics, compositing,
-                          and light VFX for company profiles, advertising, and
-                          documentaries.
+                          Advanced color, motion graphics, compositing, and
+                          visual effects for projects that require a more
+                          involved editing process.
                         </span>
 
-                        <span class="package-specs">
-                          <span class="package-spec">
-                            <span
-                              class="package-spec-label"
-                              data-en="LENGTH"
-                              data-id="DURASI"
-                            >
-                              LENGTH
-                            </span>
+                        <ul class="package-features">
+                          <li
+                            data-en="Advanced Color Grading"
+                            data-id="Advanced Color Grading"
+                          >
+                            Advanced Color Grading
+                          </li>
+                          <li
+                            data-en="Motion Graphics"
+                            data-id="Motion Graphics"
+                          >
+                            Motion Graphics
+                          </li>
+                          <li data-en="Compositing" data-id="Compositing">
+                            Compositing
+                          </li>
+                          <li data-en="Visual Effects" data-id="Visual Effects">
+                            Visual Effects
+                          </li>
+                          <li
+                            data-en="Advanced Sound Design"
+                            data-id="Advanced Sound Design"
+                          >
+                            Advanced Sound Design
+                          </li>
+                          <li
+                            data-en="Custom Visual Treatment"
+                            data-id="Custom Visual Treatment"
+                          >
+                            Custom Visual Treatment
+                          </li>
+                        </ul>
 
-                            <span
-                              class="package-spec-value"
-                              data-en="Flexible, multiple durations"
-                              data-id="Fleksibel, multiple durasi"
-                            >
-                              Flexible, multiple durations
-                            </span>
-                          </span>
-
-                          <span class="package-spec">
-                            <span
-                              class="package-spec-label"
-                              data-en="REVISIONS"
-                              data-id="REVISI"
-                            >
-                              REVISIONS
-                            </span>
-
-                            <span
-                              class="package-spec-value"
-                              data-en="3 revisions"
-                              data-id="3x"
-                            >
-                              3 revisions
-                            </span>
-                          </span>
-
-                          <span class="package-spec">
-                            <span
-                              class="package-spec-label"
-                              data-en="TURNAROUND"
-                              data-id="ESTIMASI"
-                            >
-                              TURNAROUND
-                            </span>
-
-                            <span
-                              class="package-spec-value"
-                              data-en="5–10 days"
-                              data-id="5–10 hari"
-                            >
-                              5–10 days
-                            </span>
-                          </span>
+                        <span
+                          class="package-tool"
+                          data-en="Edited with DaVinci Resolve (Fusion) for advanced compositing."
+                          data-id="Diedit pakai DaVinci Resolve (Fusion) untuk compositing tingkat lanjut."
+                        >
+                          Edited with DaVinci Resolve (Fusion) for advanced
+                          compositing.
                         </span>
                       </span>
                     </label>

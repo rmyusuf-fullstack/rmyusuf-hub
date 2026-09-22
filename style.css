@@ -1606,7 +1606,8 @@ body {
 
 .packages {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
   gap: 10px;
   margin-top: 35px;
 }
@@ -1629,6 +1630,7 @@ body {
 .package-body {
   display: flex;
   flex-direction: column;
+  height: 100%;
   min-height: 155px;
   padding: 22px;
   border: 1px solid var(--line);
@@ -1676,6 +1678,30 @@ body {
   color: var(--muted);
 }
 
+.package-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+  list-style: none;
+}
+
+.package-features li {
+  padding: 5px 8px;
+  border: 1px solid #292929;
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.package-tool {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(242, 242, 242, 0.4);
+}
+
 .package-specs {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1714,6 +1740,12 @@ body {
 
 .package--open .package-body {
   min-height: auto;
+}
+
+@media (max-width: 1100px) {
+  .packages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .brief-fields {
@@ -1973,7 +2005,10 @@ body {
     font-size: clamp(24px, 8vw, 34px);
   }
 
-  .factors,
+  .factors {
+    grid-template-columns: 1fr;
+  }
+
   .packages {
     grid-template-columns: 1fr;
   }
