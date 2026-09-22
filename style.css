@@ -510,10 +510,45 @@ body {
 }
 
 .case-title {
-  margin-bottom: 15px;
+  margin-bottom: 0;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.05em;
+}
+
+.case-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  min-width: 0;
+}
+
+.case-package {
+  padding: 5px 8px;
+  border: 1px solid #292929;
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.case-package:hover,
+.case-package:focus-visible {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--bg);
+}
+
+.case-package:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
 }
 
 .case-tags {

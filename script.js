@@ -413,6 +413,26 @@ document.querySelectorAll(".case").forEach((caseElement) => {
   });
 });
 
+document.querySelectorAll(".case-package").forEach((packageLink) => {
+  packageLink.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const briefSection = document.getElementById("brief");
+    if (briefSection) {
+      briefSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    const packageInput = Array.from(
+      document.querySelectorAll('input[type="radio"][name="package"]')
+    ).find((input) => input.value === packageLink.dataset.package);
+
+    if (!packageInput) return;
+
+    packageInput.checked = true;
+    packageInput.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+});
+
 document.querySelectorAll(".yt-player").forEach(renderPoster);
 
 const gamingStage = document.getElementById("gaming-stage");

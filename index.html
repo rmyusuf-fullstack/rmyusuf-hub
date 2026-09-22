@@ -220,20 +220,10 @@
               </p>
             </div>
 
-            <!--
-              Panduan menambah project:
-              1. Salin seluruh blok article class case sampai penutupnya.
-              2. Atur data-orientation menjadi landscape atau portrait.
-              3. Isi ID video, judul, tag, dan deskripsi dalam versi EN dan ID.
-              4. Opsional: isi ID video MY TAKE dan teksnya. Jika dikosongkan, tombol dan panelnya hilang otomatis.
-              Label item tersedia: ABOUT THIS EDIT / TENTANG EDIT INI, BRIEF / BRIEF, REFERENCE / REFERENSI, WHAT I DID / YANG SAYA LAKUKAN, WHAT I CHANGED / YANG SAYA UBAH, WHY / ALASANNYA, MY TAKE / VERSI SAYA.
-              Contoh item: ABOUT THIS EDIT dengan deskripsi tentang edit. Contoh tag fitur: COLOR GRADING.
-              Isi case-number manual secara berurutan, dan setiap data-en wajib memiliki data-id.
-            -->
             <article class="case" data-orientation="portrait">
               <header class="case-header">
                 <span class="case-number">01</span>
-                <div>
+                <div class="case-heading">
                   <h3
                     class="case-title"
                     data-en="CAMERA SHOWCASE"
@@ -241,6 +231,14 @@
                   >
                     CAMERA SHOWCASE
                   </h3>
+                  <a
+                    class="case-package"
+                    href="#brief"
+                    data-package="quick-edit"
+                    data-en="QUICK EDIT"
+                    data-id="QUICK EDIT"
+                    >QUICK EDIT</a
+                  >
                 </div>
               </header>
 
@@ -1241,7 +1239,7 @@
                             data-en="Music & Sound Effects"
                             data-id="Music & Sound Effects"
                           >
-                            Music & Sound Effects
+                            Music & Sound Effectsss
                           </li>
                           <li
                             data-en="Basic Color Correction"
