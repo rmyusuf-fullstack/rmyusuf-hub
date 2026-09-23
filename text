@@ -1,0 +1,93 @@
+<article class="case" data-orientation="potrait">
+  <header class="case-header">
+    <span class="case-number">01</span>
+    <div>
+      <h3 class="case-title" data-en="PROJECT TITLE" data-id="JUDUL PROYEK">
+        PROJECT TITLE
+      </h3>
+    </div>
+  </header>
+
+  <div class="case-body">
+    <div class="case-stage">
+      <div class="case-switch" role="group" aria-label="Video version">
+        <button
+          type="button"
+          class="case-version active"
+          aria-pressed="true"
+          data-version="brief"
+          data-video-id="REPLACE_VIDEO_ID"
+          data-title="Project title — as briefed"
+          data-tag="AS BRIEFED"
+        >
+          <span data-en="AS BRIEFED" data-id="SESUAI BRIEF">AS BRIEFED</span>
+        </button>
+        <button
+          type="button"
+          class="case-version"
+          aria-pressed="false"
+          data-version="take"
+          data-video-id=""
+          data-title="Project title — my take"
+          data-tag="MY TAKE"
+        >
+          <span data-en="MY TAKE" data-id="VERSI SAYA">MY TAKE</span>
+        </button>
+      </div>
+
+      <div
+        class="yt-player"
+        data-video-id="REPLACE_VIDEO_ID"
+        data-title="Project title — as briefed"
+      ></div>
+    </div>
+
+    <div class="case-notes" aria-live="polite">
+      <div class="case-note" data-version="brief">
+        <div class="case-note-item">
+          <span
+            class="case-note-label"
+            data-en="ABOUT THIS EDIT"
+            data-id="TENTANG EDIT INI"
+            >ABOUT THIS EDIT</span
+          >
+          <p
+            data-en="Describe what this edit is about and what makes it work."
+            data-id="Ceritakan tentang apa edit ini dan apa yang membuatnya bekerja."
+          >
+            Describe what this edit is about and what makes it work.
+          </p>
+        </div>
+        <ul class="case-features">
+          <li data-en="COLOR GRADING" data-id="COLOR GRADING">COLOR GRADING</li>
+          <li data-en="MOTION GRAPHICS" data-id="MOTION GRAPHICS">
+            MOTION GRAPHICS
+          </li>
+          <li data-en="SOUND DESIGN" data-id="SOUND DESIGN">SOUND DESIGN</li>
+        </ul>
+      </div>
+
+      <div class="case-note" data-version="take" hidden>
+        <div class="case-note-item">
+          <span class="case-note-label" data-en="MY TAKE" data-id="VERSI SAYA"
+            >MY TAKE</span
+          >
+          <p
+            data-en="Describe your own take on this footage."
+            data-id="Ceritakan versi saya sendiri untuk footage ini."
+          >
+            Describe your own take on this footage.
+          </p>
+        </div>
+      </div>
+
+      <p
+        class="case-credit"
+        data-en="Footage used with permission from CLIENT NAME."
+        data-id="Footage digunakan dengan izin dari CLIENT NAME."
+      >
+        Footage used with permission from CLIENT NAME.
+      </p>
+    </div>
+  </div>
+</article>
