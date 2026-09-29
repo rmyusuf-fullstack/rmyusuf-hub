@@ -1839,6 +1839,59 @@ body {
   margin-top: 28px;
 }
 
+.payment-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 28px;
+  padding: 22px 24px;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  background: rgba(242, 242, 242, 0.035);
+}
+
+.payment-copy {
+  min-width: 0;
+}
+
+.payment-label {
+  color: var(--text);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.payment-description {
+  max-width: 650px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.payment-link {
+  flex: 0 0 auto;
+  color: var(--text);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-bottom: 1px solid #777;
+  padding-bottom: 5px;
+}
+
+.payment-link:hover,
+.payment-link:focus-visible {
+  border-color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .payment-panel {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
 .package--open {
   grid-column: 1 / -1;
 }
